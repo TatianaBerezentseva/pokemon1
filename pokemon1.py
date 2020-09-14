@@ -3,13 +3,13 @@ def main():
     response = requests.get('https://pokeapi.co/api/v2/pokemon?limit=100&offset=200')
     library = response.json()
 
-    structure = library['results']
+    infoAboutPokemons = library['results']
 
-    minName = structure[0].get('name')
-    maxName = structure[0].get('name')
+    minName = infoAboutPokemons[0].get('name')
+    maxName = infoAboutPokemons[0].get('name')
 
-    for i in range(len(structure)):
-        name = structure[i].get('name')
+    for i in range(len(infoAboutPokemons)):
+        name = infoAboutPokemons[i].get('name')
         if len(minName) > len(name):
             minName = name
         elif len(maxName) < len(name):
