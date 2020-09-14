@@ -9,10 +9,11 @@ def main():
     max = structure[0].get('name')
 
     for i in range(len(structure)):
-        if len(min) > len(structure[i].get('name')):
-            min = structure[i].get('name')
-        elif len(max) < len(structure[i].get('name')):
-            max = structure[i].get('name')
+        iteration = structure[i].get('name')
+        if len(min) > iteration:
+            min = iteration
+        elif len(max) < iteration:
+            max = iteration
     print("Самое короткое имя " + min)
     print("Cамое длинное имя " + max)
 
